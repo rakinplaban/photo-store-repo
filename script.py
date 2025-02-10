@@ -1,29 +1,49 @@
-import os
 import json
+import random
+import re
 
-# Directory containing images
-IMAGE_DIR = "anime_women"  # Change this to your actual directory
+with open('image_files.json','r') as file:
+    data = json.load(file)
 
-# Scan directory for image files
-new_filenames = {f for f in os.listdir(IMAGE_DIR) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp'))}
+# print(len(data["images"]))
 
-# Read the existing JSON data
-with open('image_files.json', 'r') as f:
-    data = json.load(f)
+# index = int(input("Enten the index number 0 - 104: "))
+index = random.randint(0, len(data["images"])-1)
+print("I generated index : ",index)
 
-# Initialize 'images' key if not present
-if 'images' not in data:
-    data['images'] = []
+print(data["images"][index])
 
-images = data['images']
+selected_image = data["images"][index]
 
-# Add new files that aren't already in the list
-for filename in new_filenames:
-    if filename not in images:
-        images.append(filename)
+# Read the original Markdown file
+with open("README.md", "r", encoding='utf-8', errors='ignore') as f:
+    markdown_content = f.read()
 
-# Save the updated data back to the JSON file
-with open('image_files.json', 'w') as f:
-    json.dump(data, f, indent=4)
+# Regex pattern to find the <img> tag with id="updatable"
+img_pattern = r'<img[^>]*id=["\']updatable["\'][^>]*>'
 
-print(f"Total images: {len(images)}")
+# Search for the tag
+match = re.search(img_pattern, markdown_content)
+
+if match:
+    original_img_tag = match.group(0)
+
+    # Regex to update the src attribute within the <img> tag
+    updated_img_tag = re.sub(
+        r'src=["\'][^"\']*["\']',  # Match src="current_link"
+        f'src="{"anime_women/"+selected_image}"',  # Replace with new link
+        original_img_tag
+    )
+
+    # Replace the original <img> tag with the updated one in the Markdown content
+    updated_markdown_content = markdown_content.replace(original_img_tag, updated_img_tag)
+
+    # Write the updated content back to the file
+    with open("README.md", "w", encoding='utf-8', errors='ignore') as f:
+        f.write(updated_markdown_content)
+
+    print("Image link updated successfully!")
+    print("Original tag:", original_img_tag)
+    print("Updated tag:", updated_img_tag)
+else:
+    print("No <img> tag with id='updatable' found in the Markdown file.")
