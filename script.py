@@ -3,37 +3,27 @@ import json
 
 # Directory containing images
 IMAGE_DIR = "anime_women"  # Change this to your actual directory
-JSON_FILE = "image_files.json"  # Name of the JSON file
-
-# Function to load existing filenames from JSON file
-def load_existing_filenames(json_file):
-    if os.path.exists(json_file):
-        with open(json_file, "r") as file:
-            try:
-                return json.load(file)
-            except json.JSONDecodeError:
-                return []  # Return empty list if JSON is corrupted
-    return []
-
-# Function to save filenames to JSON
-def save_filenames(json_file, filenames):
-    with open(json_file, "w") as file:
-        json.dump(filenames, file, indent=4)
-
-# Get existing filenames from JSON
-existing_filenames = set(load_existing_filenames(JSON_FILE))
 
 # Scan directory for image files
-new_filenames = {f for f in os.listdir(IMAGE_DIR) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp'))}
+new_filenames = {f for f in os.listdir(IMAGE_DIR) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp'))}
 
-# Find new files not in the JSON
-files_to_add = new_filenames - existing_filenames
+# Read the existing JSON data
+with open('image_files.json', 'r') as f:
+    data = json.load(f)
 
-if files_to_add:
-    print(f"Adding {len(files_to_add)} new files to JSON.")
-    existing_filenames.update(files_to_add)
-    save_filenames(JSON_FILE, list(existing_filenames))
-else:
-    print("No new images found.")
+# Initialize 'images' key if not present
+if 'images' not in data:
+    data['images'] = []
 
-print("Updated JSON file successfully!")
+images = data['images']
+
+# Add new files that aren't already in the list
+for filename in new_filenames:
+    if filename not in images:
+        images.append(filename)
+
+# Save the updated data back to the JSON file
+with open('image_files.json', 'w') as f:
+    json.dump(data, f, indent=4)
+
+print(f"Total images: {len(images)}")
