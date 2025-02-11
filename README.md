@@ -19,11 +19,11 @@ cd anime-girl-image-updater
 ### 2️⃣ Prepare Your Setup
 - Make sure Python is installed on your system.
 - Store anime images in the `anime_women/` directory.
-- Maintain an `image_files.json` file listing image filenames under the key `images`.
+- Maintain an `image_files.json` file listing image filenames under the key `images`. 🌸 just run the `python file_update.py` and it'll do the job for u 😉.
 
 ### 3️⃣ Run the Magic Script
 ```bash
-python update_readme.py
+python script.py
 ```
 Boom! Your README is now blessed with an anime waifu. 🎀
 
