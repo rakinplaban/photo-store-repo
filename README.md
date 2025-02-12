@@ -52,4 +52,4 @@ Made with 💕 for anime lovers and open-source dreamers. 🎀
 
 <!-- <img src="anime.jpg" height="200px" width = "200px"> -->
 
-![AnimeGirls](https://res.cloudinary.com/dhbxhfwva/image/upload/c_scale,h_200,w_200/anime.jpg?v=1)
+![AnimeGirls](https://res.cloudinary.com/dhbxhfwva/image/upload/c_scale,h_200,w_200/anime.jpg)
