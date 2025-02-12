@@ -50,4 +50,6 @@ Made with 💕 for anime lovers and open-source dreamers. 🎀
 
 <!-- <img id="updatable" src="anime_women/getimg_ai_img-AKsovVtL1XLwwxl6vLyaI.jpeg" height="400px" width = "400px"> -->
 
-<img src="anime.jpg" height="200px" width = "200px">
+<!-- <img src="anime.jpg" height="200px" width = "200px"> -->
+
+![AnimeGirls](https://res.cloudinary.com/dhbxhfwva/image/upload/c_scale,h_200,w_200/anime.jpg?v=1)
