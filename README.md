@@ -48,4 +48,4 @@ Made with 💕 for anime lovers and open-source dreamers. 🎀
 
 
 
-<img id="updatable" src="anime_women/DALL·E 2025-01-19 17.07.50 - A detailed anime-style illustration of a confident and elegant woman with a friendly yet assertive expression, wearing a fashionable outfit. She is ge.webp" height="400px" width = "400px">
+<img id="updatable" src="anime_women/getimg_ai_img-AKsovVtL1XLwwxl6vLyaI.jpeg" height="400px" width = "400px">
