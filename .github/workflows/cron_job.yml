@@ -28,6 +28,6 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add anime.jpg
-        git commit -m ":sparkles: A new anime beauty graces our README! May she bless our commits with fewer bugs! 🐛💖"
+        git add destination/anime.jpg
+        git commit -m ":sparkles: An anime charm joins our README! May she ward off pesky bugs! 🐛💖"
         git push
