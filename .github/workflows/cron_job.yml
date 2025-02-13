@@ -1,5 +1,10 @@
 name: Update README Image
 
+env:
+  CLOUD_NAME: ${{ secrets.CLOUD_NAME }}
+  API_KEY: ${{ secrets.API_KEY }}
+  API_SECRET: ${{ secrets.API_SECRET }}
+
 on:
   schedule:
     - cron: "0 0 * * *" # Runs daily at midnight (adjust as needed)
