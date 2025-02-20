@@ -2,11 +2,11 @@ import json
 import random
 import re
 from PIL import Image
-import cloudinary
-import cloudinary.uploader
-from cloudinary.utils import cloudinary_url
+# import cloudinary
+# import cloudinary.uploader
+# from cloudinary.utils import cloudinary_url
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 with open('image_files.json','r') as file:
     data = json.load(file)
@@ -28,6 +28,8 @@ location = 'anime_women/'+selected_image
 # Open the image and convert to JPG
 image = Image.open(f"anime_women/{selected_image}")
 rgb_im = image.convert("RGB")  # Ensure it's RGB format for JPEG
+# Resize the image to 200x200
+rgb_im = rgb_im.resize((200, 200), Image.LANCZOS)  # High-quality resizing
 rgb_im.save("destination/anime.jpg", "JPEG")  # Save as anime.jpg
 
 # print(f"Converted {selected_image} to anime.jpg successfully!")
@@ -66,26 +68,26 @@ rgb_im.save("destination/anime.jpg", "JPEG")  # Save as anime.jpg
 #     print("No <img> tag with id='updatable' found in the Markdown file.")
 
 
-load_dotenv()
+# load_dotenv()
 
-# Configuration       
-cloudinary.config( 
-    cloud_name = os.getenv('CLOUD_NAME'),
-    api_key = os.getenv("API_KEY"), 
-    api_secret = os.getenv("API_SECRET"), # Click 'View API Keys' above to copy your API secret
-    secure=True
-)
+# # Configuration       
+# cloudinary.config( 
+#     cloud_name = os.getenv('CLOUD_NAME'),
+#     api_key = os.getenv("API_KEY"), 
+#     api_secret = os.getenv("API_SECRET"), # Click 'View API Keys' above to copy your API secret
+#     secure=True
+# )
 
-# print(f"cloudinary api key: ",cloudinary.config().cloud_name)
-# print(f"cloudinary api key: ",cloudinary.config().api_key)
-# Upload an image
-upload_result = cloudinary.uploader.upload("destination/anime.jpg", public_id="anime",invalidate = True)
-print("Uploaded image url: ",upload_result["secure_url"])
+# # print(f"cloudinary api key: ",cloudinary.config().cloud_name)
+# # print(f"cloudinary api key: ",cloudinary.config().api_key)
+# # Upload an image
+# upload_result = cloudinary.uploader.upload("destination/anime.jpg", public_id="anime",invalidate = True)
+# print("Uploaded image url: ",upload_result["secure_url"])
 
-# Optimize delivery by resizing and applying auto-format and auto-quality
-optimize_url, _ = cloudinary_url("anime", fetch_format="auto", quality="auto")
-print("Optimized image url: ",optimize_url)
+# # Optimize delivery by resizing and applying auto-format and auto-quality
+# optimize_url, _ = cloudinary_url("anime", fetch_format="auto", quality="auto")
+# print("Optimized image url: ",optimize_url)
 
-# Transform the image: auto-crop to square aspect_ratio
-auto_crop_url, _ = cloudinary_url("anime", width=200, height=200, crop="scale")
-print("Optimized image url: ",auto_crop_url)
+# # Transform the image: auto-crop to square aspect_ratio
+# auto_crop_url, _ = cloudinary_url("anime", width=200, height=200, crop="scale")
+# print("Optimized image url: ",auto_crop_url)
