@@ -30,7 +30,7 @@ image = Image.open(f"anime_women/{selected_image}")
 rgb_im = image.convert("RGB")  # Ensure it's RGB format for JPEG
 # Resize the image to 200x200
 rgb_im = rgb_im.resize((200, 200), Image.LANCZOS)  # High-quality resizing
-rgb_im.save("destination/anime.jpg", "JPEG")  # Save as anime.jpg
+rgb_im.save("destination/anime.webp", "JPEG")  # Save as anime.jpg
 
 # print(f"Converted {selected_image} to anime.jpg successfully!")
 

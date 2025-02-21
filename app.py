@@ -15,7 +15,7 @@ def serve_image():
     #     return "Image not found", 404
     # return send_file(image_path, mimetype="image/jpeg")
 
-    response = make_response(send_file("destination/anime.jpg", mimetype='image/jpeg'))
+    response = make_response(send_file("destination/anime.webp", mimetype='image/jpeg'))
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
