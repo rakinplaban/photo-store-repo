@@ -8,7 +8,7 @@ Hey there, traveler! ✨ I'm **Hoshiko** (星子), your adorable guide! I'm here
 This repository hosts a Flask-powered backend that dynamically updates an anime image every 5 minutes! It fights against **aggressive caching** and ensures a fresh image is always displayed. No more stale waifus! 🎀
 
 ## 💡 Features
-- 🖼 **Dynamic Anime Image Updates** every 5 minutes! ⏳
+- 🖼 **Dynamic Anime Image Updates** everyday! ⏳
 - 🛡 **Cache-Busting Techniques** to prevent outdated images! 🔥
 - 🌎 **Vercel Deployment Support** for an easy cloud setup! ☁️
 - 🐍 **Flask Backend** for smooth and efficient image serving! 💨
@@ -18,7 +18,7 @@ Follow these steps, and I'll make sure everything runs smoothly for you! 🥰
 
 ### 1️⃣ Clone the Repo
 ```bash
-git clone https://github.com/yourusername/hoshiko-image-updater.git
+git clone https://github.com/rakinplaban/photo-store-repo.git
 cd hoshiko-image-updater
 ```
 
@@ -77,7 +77,8 @@ _"Thank you for visiting! I hope this repo brings you lots of happiness and cool
 
 ---
 
-**💖 [Star 🌟 This Repo](https://github.com/yourusername/hoshiko-image-updater) if you love anime magic!** ✨
+**💖 [Star 🌟 This Repo](https://github.com/rakinplaban/photo-store-repo) if you love anime magic!** ✨
+
 
 ![AnimeGirls](https://animemagic.vercel.app/anime-image?t=123456)
 
