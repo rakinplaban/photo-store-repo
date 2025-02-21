@@ -79,7 +79,7 @@ _"Thank you for visiting! I hope this repo brings you lots of happiness and cool
 
 **💖 [Star 🌟 This Repo](https://github.com/yourusername/hoshiko-image-updater) if you love anime magic!** ✨
 
-![AnimeGirls](destination/anime.jpg?refresh=1)
+![AnimeGirls](https://animemagic.vercel.app/anime-image)
 
 
 
