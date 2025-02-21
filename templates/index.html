@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #FFC0CB;
+        }
+        h1, h2{
+            color: red;
+        }
+    </style>
+    <title>🌸 Documentation 🌸</title>
+</head>
+<body>
+    <h1>🌸 Anime Image Updater - Documentation🌸</h1>
+
+    <h2>📖 Overview</h2>
+    The <b>Anime Image Updater</b> is a Flask-powered application that dynamically updates an anime image at regular intervals. It prevents aggressive caching and ensures that a fresh anime girl image is always displayed. This app is designed for deployment on Vercel, making it easy to serve updated images without manual refreshes.
+
+    <h2>🚀 Features</h2> 
+    <ul>
+        <li>🖼️ <b>Dynamic Anime Image Updates**</b> - Automatically updates the image at fixed intervals.</li>
+        <li>🛡️ <b>Cache-Busting**</b> - Prevents old images from being served due to browser caching.</li>
+        <li>🌐 <b>API Endpoint**</b> - Provides an easy-to-use endpoint to fetch the latest anime image.</li>
+        <li>☁️ <b>Vercel Deployment Support**</b> - Optimized for quick and free hosting on Vercel.</li>
+    </ul>
+
+
+
+
+    <h2>🛠 Installation</h2>
+    To run the app locally, follow these steps:
+
+    <h3>1️⃣ Clone the Repository</h3> 
+    <pre>
+        <code>
+            git clone https://github.com/rakinplaban/photo-store-repo.git
+            cd photo-store-repo
+        </code>
+    </pre>
+
+
+    <h3> 2️⃣ Install Dependencies</h3>
+    Ensure you have **Python 3** installed. Then install required dependencies:
+    <pre>pip install -r requirements.txt</pre>
+
+
+    <h3> 3️⃣ Run the Flask App</h3>
+    <pre>python app.py</pre>
+
+
+
+    <div>The server should now be running at: <code>http://127.0.0.1:5000/</code></div>
+
+
+
+    <h2>🌍 API Endpoints</h2>
+
+    <h3>🖼️ Get Updated Anime Image</h3>
+    <b>Endpoint:</b>
+    <pre>GET /anime-image</pre>
+
+
+    <b>Description:</b> Returns the latest anime image with cache-busting enabled.
+
+    <b>Example Usage:</b>
+    <pre><img src="http://127.0.0.1:5000/anime-image?t=123456" alt="Anime Image"></pre>
+
+
+    <h2>🚀 Deployment on Vercel</h2>
+    Deploy the app on <b>Vercel</b> for free:
+
+    <h3> 1️⃣ Install Vercel CLI</h3>
+    <pre>npm install -g vercel</pre>
+
+
+
+    <h3> 2️⃣ Initialize Vercel</h3>
+    <pre>vercel init</pre>
+
+
+    Follow the prompts to set up your project.
+
+    <h3> 3️⃣ Deploy 🚀</h3>
+    <pre>vercel --prod</pre>
+
+    Your app will be live at <code>https://your-vercel-app.vercel.app/anime-image</code>.
+
+
+    <h2>🅰️ Wanna some anime magic 💫</h2>
+    Add this markdown snippet 👉🏼 <code>![AnimeGirls](https://animemagic.vercel.app/anime-image?t=123456)</code>
+    or this one 👉🏼 <code>&lt;img src="https://animemagic.vercel.app/anime-image?t=123456" alt="Anime" height="" width=""&gt;</code> and your README is ready to go with anime fun.
+
+
+    <h2>💖 Support & Contribution</h2>
+    If you love this project, consider:
+    <ul>
+        <li>⭐ Starring the repository</li> 
+        <li>🍴 Forking it and adding more anime magic</li> 
+        <li>🛠 Suggesting improvements or reporting issues</li> 
+    </ul>
+    
+
+    <h2>📜 License</h2>
+    This project is licensed under the <b>MIT License</b>. Feel free to use it, but don't forget to give credit! 😊
+
+
+</body>
+</html>

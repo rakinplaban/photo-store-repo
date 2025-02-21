@@ -1,4 +1,4 @@
-from flask import Flask, send_file, request, make_response
+from flask import Flask, send_file, request, make_response, render_template
 import time
 import os
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -6,6 +6,11 @@ import subprocess
 import sys
 
 app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/anime-image')
 def serve_image():
@@ -40,4 +45,4 @@ scheduler.start()
 
 if __name__ == '__main__':
     print(sys.executable)
-    app.run(debug=False, use_reloader=False)
+    app.run(debug=True, use_reloader=False)
