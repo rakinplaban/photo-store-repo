@@ -4,108 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body{
+        body {
             background-color: #FFC0CB;
+            background-image: url('https://res.cloudinary.com/dhbxhfwva/image/upload/v1740201478/4345e63a-42db-49b3-bebc-3037efbbc02d_hcfdvh.webp');
+            background-repeat: no-repeat;
+            background-size: cover;  
+            background-position: center;  
+            position: relative;   
+        }
+
+        /* Overlay to reduce image opacity */
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 192, 203, 0.5); /* Pinkish transparent overlay */
+            z-index: 0; /* Stays behind the text */
+        }
+
+
+        h3, p, b, li, .text { /* Apply to all text elements */
+            color: white;  /* White text */
+            text-shadow: 
+                -2px -2px 0 #ff69b4,  
+                2px -2px 0 #ff69b4,  
+                -2px 2px 0 #ff69b4,  
+                2px 2px 0 #ff69b4; /* Pink outline */
+        }
+        pre{
+            background-color: black;
+        }
+        .points{
+            color: white;  /* White text */
+            text-shadow: 
+                -2px -2px 0 #ed077a,  
+                2px -2px 0 #ed077a,  
+                -2px 2px 0 #380920,  
+                2px 2px 0 #380920;
+        }
+        code, pre {
+            color:green;
         }
         h1, h2{
             color: red;
+            text-shadow: 
+                -2px -2px 0 #ff69b4,  
+                2px -2px 0 #ff69b4,  
+                -2px 2px 0 #ff69b4,  
+                2px 2px 0 #ff69b4;
         }
     </style>
     <title>🌸 Documentation 🌸</title>
 </head>
 <body>
-    <h1>🌸 Anime Image Updater - Documentation🌸</h1>
+    <div class="background-overlay"></div>
+    <div class="content">
+        <h1>🌸 Anime Image Updater - Documentation🌸</h1>
 
-    <h2>📖 Overview</h2>
-    The <b>Anime Image Updater</b> is a Flask-powered application that dynamically updates an anime image at regular intervals. It prevents aggressive caching and ensures that a fresh anime girl image is always displayed. This app is designed for deployment on Vercel, making it easy to serve updated images without manual refreshes.
+        <h2>📖 Overview</h2>
+        <div class="text">
+            The <b>Anime Image Updater</b> is a Flask-powered application that dynamically updates an anime image at regular intervals. It prevents aggressive caching and ensures that a fresh anime girl image is always displayed. This app is designed for deployment on Vercel, making it easy to serve updated images without manual refreshes.
+        </div>
+        <h2>🚀 Features</h2> 
+        <ul>
+            <li>🖼️ <b class="points">Dynamic Anime Image Updates**</b> - Automatically updates the image at fixed intervals.</li>
+            <li>🛡️ <b class="points">Cache-Busting**</b> - Prevents old images from being served due to browser caching.</li>
+            <li>🌐 <b class="points">API Endpoint**</b> - Provides an easy-to-use endpoint to fetch the latest anime image.</li>
+            <li>☁️ <b class="points">Vercel Deployment Support**</b> - Optimized for quick and free hosting on Vercel.</li>
+        </ul>
 
-    <h2>🚀 Features</h2> 
-    <ul>
-        <li>🖼️ <b>Dynamic Anime Image Updates**</b> - Automatically updates the image at fixed intervals.</li>
-        <li>🛡️ <b>Cache-Busting**</b> - Prevents old images from being served due to browser caching.</li>
-        <li>🌐 <b>API Endpoint**</b> - Provides an easy-to-use endpoint to fetch the latest anime image.</li>
-        <li>☁️ <b>Vercel Deployment Support**</b> - Optimized for quick and free hosting on Vercel.</li>
-    </ul>
+        <h2>🛠 Installation</h2>
+        <div class="text">
+            To run the app locally, follow these steps:
+        </div>
 
-
-
-
-    <h2>🛠 Installation</h2>
-    To run the app locally, follow these steps:
-
-    <h3>1️⃣ Clone the Repository</h3> 
-    <pre>
-        <code>
-            git clone https://github.com/rakinplaban/photo-store-repo.git
-            cd photo-store-repo
-        </code>
-    </pre>
-
-
-    <h3> 2️⃣ Install Dependencies</h3>
-    Ensure you have **Python 3** installed. Then install required dependencies:
-    <pre>pip install -r requirements.txt</pre>
+        <h3>1️⃣ Clone the Repository</h3> 
+        <pre>
+            <code>
+                git clone https://github.com/rakinplaban/photo-store-repo.git
+                cd photo-store-repo
+            </code>
+        </pre>
 
 
-    <h3> 3️⃣ Run the Flask App</h3>
-    <pre>python app.py</pre>
+        <h3> 2️⃣ Install Dependencies</h3>
+        <div class="text">Ensure you have <b>Python 3</b> installed. Then install required dependencies:</div>
+        <pre>pip install -r requirements.txt</pre>
 
 
+        <h3> 3️⃣ Run the Flask App</h3>
+        <pre>python app.py</pre>
 
-    <div>The server should now be running at: <code>http://127.0.0.1:5000/</code></div>
+        <div class="text">The server should now be running at:</div> <code>http://127.0.0.1:5000/</code>
 
+        <h2>🌍 API Endpoints</h2>
 
-
-    <h2>🌍 API Endpoints</h2>
-
-    <h3>🖼️ Get Updated Anime Image</h3>
-    <b>Endpoint:</b>
-    <pre>GET /anime-image</pre>
-
-
-    <b>Description:</b> Returns the latest anime image with cache-busting enabled.
-
-    <b>Example Usage:</b>
-    <pre>&lt;img src="http://127.0.0.1:5000/anime-image?t=123456" alt="Anime Image"&lt;</pre>
+        <h3>🖼️ Get Updated Anime Image</h3>
+        <b>Endpoint:</b>
+        <pre>GET /anime-image</pre>
 
 
-    <h2>🚀 Deployment on Vercel</h2>
-    Deploy the app on <b>Vercel</b> for free:
+        <div class="text"><b>Description:</b> Returns the latest anime image with cache-busting enabled.</div>
 
-    <h3> 1️⃣ Install Vercel CLI</h3>
-    <pre>npm install -g vercel</pre>
+        <b>Example Usage:</b>
+        <pre>&lt;img src="http://127.0.0.1:5000/anime-image?t=123456" alt="Anime Image"&gt;</pre>
+
+
+        <h2>🚀 Deployment on Vercel</h2>
+        <div class="text">Deploy the app on <b>Vercel</b> for free:</div>
+
+        <h3> 1️⃣ Install Vercel CLI</h3>
+        <pre>npm install -g vercel</pre>
 
 
 
-    <h3> 2️⃣ Initialize Vercel</h3>
-    <pre>vercel init</pre>
+        <h3> 2️⃣ Initialize Vercel</h3>
+        <pre>vercel init</pre>
 
 
-    Follow the prompts to set up your project.
+        <div class="text">Follow the prompts to set up your project.</div>
 
-    <h3> 3️⃣ Deploy 🚀</h3>
-    <pre>vercel --prod</pre>
+        <h3> 3️⃣ Deploy 🚀</h3>
+        <pre>vercel --prod</pre>
 
-    Your app will be live at <code>https://your-vercel-app.vercel.app/anime-image</code>.
-
-
-    <h2>🅰️ Wanna some anime magic 💫</h2>
-    Add this markdown snippet 👉🏼 <code>![AnimeGirls](https://animemagic.vercel.app/anime-image?t=123456)</code>
-    or this one 👉🏼 <code>&lt;img src="https://animemagic.vercel.app/anime-image?t=123456" alt="Anime" height="" width=""&gt;</code> and your README is ready to go with anime fun.
+        <div class="text">Your app will be live at</div> <code>https://your-vercel-app.vercel.app/anime-image</code>.
 
 
-    <h2>💖 Support & Contribution</h2>
-    If you love this project, consider:
-    <ul>
-        <li>⭐ Starring the repository</li> 
-        <li>🍴 Forking it and adding more anime magic</li> 
-        <li>🛠 Suggesting improvements or reporting issues</li> 
-    </ul>
+        <h2>🅰️ Wanna some anime magic 💫</h2>
+        <div class="text">Add this markdown snippet</div> 👉🏼 <code>![AnimeGirls](https://animemagic.vercel.app/anime-image?t=123456)</code>
+        <div class="text">or this one</div> 👉🏼 <code>&lt;img src="https://animemagic.vercel.app/anime-image?t=123456" alt="Anime" height="" width=""&gt;</code> <div class="text">and your README is ready to go with anime fun.</div>
+
+
+        <h2>💖 Support & Contribution</h2>
+        <div class="text">If you love this project, consider:</div>
+        <ul>
+            <li>⭐ Starring the repository</li> 
+            <li>🍴 Forking it and adding more anime magic</li> 
+            <li>🛠 Suggesting improvements or reporting issues</li> 
+        </ul>
     
 
-    <h2>📜 License</h2>
-    This project is licensed under the <b>MIT License</b>. Feel free to use it, but don't forget to give credit! 😊
+        <h2>📜 License</h2>
+        <div class="text">This project is licensed under the <b>MIT License</b>. Feel free to use it, but don't forget to give credit! 😊</div>
 
-
+    </div>
 </body>
 </html>
